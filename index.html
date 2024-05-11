@@ -68,6 +68,9 @@
             border-color: light-dark(rgb(207, 199, 87), rgb(250, 232, 100));
             background-color:rgb(242, 240, 203);
         }
+	#ads{
+	    background-image:url("ban.jpg");
+	}
         </style>
     </head>
     <body style = "background-image: linear-gradient(80deg, #66f542, #f5e342);">
@@ -85,6 +88,7 @@
         <div id = "manual">
             <h1>КРГ-1</h1>
             <p>КРГ (Калькулятор Росподілу Грошей). Допомагає швидко та зручно вирахувати гроші які дреба розділити на 50%, 40%, 10%.</p>
+	    <p><input id="ads" type="button" onclick="Ad()"/></p>
         </div>
         
         <script>
@@ -98,6 +102,9 @@
                 resulValueText =  "Amunt money: " + summ + "$" + "\nOn business: " + toBank + "$" + "\nOn a dream: " + toDreams + "$" + "\nFor personal expenses: " + toPrivFixed + "$";
                 document.getElementById("amountResul").innerText = resulValueText;
             }
+	    function Ad(){
+		    window.location.href = "https://redirecting0.eu/p/nFoJ/YLna/DSUv"
+	    }
         </script>
     </body>
 </html>
