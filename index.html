@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <title>Count</title>
+        <style>
+        #manual{
+            position:absolute;
+            top:600px;
+            left:100px;
+            width:500px;
+        }
+        #headWind{
+            position:absolute;
+            top:100px;
+            left:100px;
+        }
+        #money{
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:500px;
+            height:89px;
+            border-width:5px;
+            border-style: inset;
+			border-radius:20px;
+            border-color: light-dark(rgb(207, 199, 87), rgb(250, 232, 100));
+            font-size:45px;
+            color:rgb(117, 102, 27);
+            background-color:rgb(242, 240, 203);
+        }
+        #euro{
+            position:absolute;
+            top:-91px;
+            left:537px;
+            font-size:89px;
+            color:rgb(2, 212, 23);
+        }
+        #recht{
+            position:absolute;
+            top:110px;
+            left:100px;
+            width:300px;
+            height:60px;
+            font-size:50px;
+			border-radius:13px;
+            background-color:rgb(114, 214, 101);
+            color:rgb(42, 84, 36);
+            
+        }
+        #amountResul{
+            position:absolute;
+            top:15px;
+            left:10px;
+            color:rgb(207, 199, 87);
+
+        }
+        #resul{
+            position:absolute;
+            top:180px;
+            left:0px;
+            width:500px;
+            height:300px;
+            border-width: 4px;
+            border-style: inset;
+			border-radius: 20px;
+            border-color: light-dark(rgb(207, 199, 87), rgb(250, 232, 100));
+            background-color:rgb(242, 240, 203);
+        }
+        </style>
+    </head>
+    <body style = "background-color:rgb(194, 252, 215);">
+        <div id = "headWind">
+            <div id = "wind">
+                <input type = "number" id = "money"/><p id = "euro">€</p>            
+            </div>
+            <div id = "butt">
+                <input type = "button" id = "recht" onclick = "Count()" value = "Count"/>
+            </div>
+            <div id = "resul">
+                <h1 id = "amountResul"><h1>
+            </div>
+        </div>
+        <div id = "manual">
+            <h1>КРГ-1</h1>
+            <p>КРГ (Калькулятор Росподілу Грошей). Допомагає швидко та зручно вирахувати гроші які дреба розділити на 50%, 40%, 10%.</p>
+        </div>
+        
+        <script>
+            function Count(){
+                summ = document.getElementById("money").value;
+                toBank = summ / 2;
+                procent = 20;
+                toDreams = toBank - (toBank * (procent / 100));
+                toPriv = toBank - toDreams;
+                toPrivFixed = toPriv.toFixed(2);
+                resulValueText =  "Amunt money: " + summ + "$" + "\nOn business: " + toBank + "$" + "\nOn a dream: " + toDreams + "$" + "\nFor personal expenses: " + toPrivFixed + "$";
+                document.getElementById("amountResul").innerText = resulValueText;
+            }
+        </script>
+    </body>
+</html>
